@@ -1,12 +1,12 @@
-name: 'Jinja2 Action'
-description: 'Use the Jinja2 templating engine on your workflow'
+name: "Jinja2 Action"
+description: "Use the Jinja2 templating engine on your workflow"
 inputs:
   template:
     required: true
   output_file:
     required: true
   strict:
-    description: 'Fails on missing values'
+    description: "Fails on missing values"
     required: false
     default: false
   variables:
@@ -19,8 +19,8 @@ inputs:
     required: false
     default: yaml
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "ghcr.io/dkaser/jinja2-action:2ad8539"
 branding:
-  icon: 'sliders'
-  color: 'red'
+  icon: "sliders"
+  color: "red"

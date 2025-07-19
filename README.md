@@ -5,7 +5,7 @@ to easily run it in your GitHub workflows.
 
 ```yml
 - name: Setup nginx
-  uses: dkaser/jinja2-action@v1.3.0
+  uses: dkaser/jinja2-action@v1
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf
@@ -19,7 +19,7 @@ to easily run it in your GitHub workflows.
 
 ```yml
 - name: Setup nginx
-  uses: dkaser/jinja2-action@v1.3.0
+  uses: dkaser/jinja2-action@v1
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf
@@ -31,7 +31,7 @@ to easily run it in your GitHub workflows.
 
 ```yml
 - name: Setup nginx
-  uses: dkaser/jinja2-action@v1.3.0
+  uses: dkaser/jinja2-action@v1
   with:
     template: infra/nginx.conf.j2
     output_file: infra/nginx.conf

@@ -28,6 +28,16 @@ class Context:
             with open(data_file, 'r') as file:
                 self._variables.update(read_context_data(format, file, None))
 
+    def load_from_github_context(self):
+        # Parse the JSON string from the GITHUB_CONTEXT environment variable
+        github_context = self._environ.get('GITHUB_CONTEXT', '{}')
+        if github_context:
+            import json
+            try:
+                context_data = json.loads(github_context)
+                self._variables.update(context_data)
+            except json.JSONDecodeError:
+                print("Error decoding GITHUB_CONTEXT JSON")
 
     def render_template(self):
         with open(self._environ[GitHubActionsInput.TEMPLATE], 'r') as file:

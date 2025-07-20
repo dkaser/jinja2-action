@@ -21,6 +21,8 @@ inputs:
 runs:
   using: "docker"
   image: "docker://ghcr.io/dkaser/jinja2-action:2ad8539"
+  env:
+    GITHUB_CONTEXT: ${{ toJson(github) }}
 branding:
   icon: "sliders"
   color: "red"

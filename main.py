@@ -35,7 +35,10 @@ class Context:
             import json
             try:
                 context_data = json.loads(github_context)
-                self._variables.update(context_data)
+                # Remove github.token if present
+                context_data.pop('token', None)
+                # Wrap context in "github" object
+                self._variables.update({'github': context_data})
             except json.JSONDecodeError:
                 print("Error decoding GITHUB_CONTEXT JSON")
 
